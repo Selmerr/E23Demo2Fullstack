@@ -1,9 +1,6 @@
 package dag1.dat22be23uge1dag1demo2.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -13,14 +10,16 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 
-//Entity annotation. Noget med databasen
 
+//Entity annotation. Noget med databasen
 @Entity
+@Table (name = "spiller")
 public class Player {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     int id;
+    @Column (name = "player name", length = 70, nullable = false)
     String name;
     String country;
     String position;
